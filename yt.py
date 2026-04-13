@@ -19,7 +19,7 @@ def download_video(url, path="downloads/"):
     os.system(f'yt-dlp -f bestaudio -o "{audio_file}" {url}')  #for audio the only
 
     subprocess.run([
-        "ffmpeg", "-i", video_file, "-i", audio_file,          #for both audio and video
+        "ffmpeg", "-i", video_file, "-i", audio_file,          #for the  both audio and videos
         "-c:v", "copy", "-c:a", "aac", "-strict", "experimental",
         final_file
     ])
