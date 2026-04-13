@@ -14,9 +14,9 @@ def download_video(url, path="downloads/"):
     audio_file = os.path.join(path, f"{safe_title}_audio.m4a")
     final_file = os.path.join(path, f"{safe_title}.mp4")
 
-    os.system(f'yt-dlp -f bestvideo -o "{video_file}" {url}')  # for video only
+    os.system(f'yt-dlp -f bestvideo -o "{video_file}" {url}')  # for video the only
 
-    os.system(f'yt-dlp -f bestaudio -o "{audio_file}" {url}')  #for audio only
+    os.system(f'yt-dlp -f bestaudio -o "{audio_file}" {url}')  #for audio the only
 
     subprocess.run([
         "ffmpeg", "-i", video_file, "-i", audio_file,          #for both audio and video
